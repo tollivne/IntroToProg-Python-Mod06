@@ -53,7 +53,7 @@ class Processor:
             row = {"Task": data[0].strip(), "Priority": data[1].strip()}
             list_of_rows.append(row)
         file.close()
-        return list_of_rows, "Success"
+        return list_of_rows, "Data was read from file!"
 
     @staticmethod
     def add_data_to_list (task, priority, list_of_rows):
@@ -63,7 +63,7 @@ class Processor:
         """
         dicRow = {"Task": task, "Priority": priority}  # Create a new dictionary row
         list_of_rows.append(dicRow)  # Add the new row to the list/table
-        return list_of_rows, "Success"
+        return list_of_rows, "Task has been added!"
 
     @staticmethod
     def remove_data_from_list(task, list_of_rows, item_removed_status):
@@ -80,7 +80,7 @@ class Processor:
                 item_removed_status = True  # Set the flag so the loop stops
             intRowNumber += 1  # Increase counter to get next row
 
-        return list_of_rows, item_removed_status, "Success"
+        return list_of_rows, item_removed_status, ("Item removed: " + str(item_removed_status))
 
     @staticmethod
     def write_data_to_file(file_name, list_of_rows):
@@ -93,7 +93,7 @@ class Processor:
         for dicRow in list_of_rows:  # Write each row of data to the file
             objFile.write(dicRow["Task"] + "," + dicRow["Priority"] + "\n")
         objFile.close()
-        return list_of_rows, "Success"
+        return list_of_rows, "Data Saved to File!"
     # TODO: Create more functions that perform various Processing task as needed
 
 # Presentation (Input/Output)  -------------------------------------------- #
@@ -177,6 +177,7 @@ class IO:
 # Step 1 - When the program starts, Load data from ToDoFile.txt.
 
 lstTable, strStatus = Processor.read_data_from_file(strFileName, lstTable)
+IO.input_press_to_continue(strStatus)
 
 # Step 2 - Display a menu of choices to the user
 while(True):
@@ -198,7 +199,7 @@ while(True):
         # Moved processing code to a function
 
         lstTable, strStatus = Processor.add_data_to_list(strTask, strPriority, lstTable)
-
+        IO.input_press_to_continue(strStatus)
         continue  # to show the menu
 
     # Remove a task from the list/Table
@@ -217,9 +218,10 @@ while(True):
 
         # Update user on the status of the search
         if(blnItemRemoved == True):
-            print("The task was removed.")
+            IO.input_press_to_continue(strStatus)
         else:
             print("I'm sorry, but I could not find that task.")
+            IO.input_press_to_continue(strStatus)
         print()  # Add an extra line for looks
 
         continue  # to show the menu
@@ -237,7 +239,7 @@ while(True):
 
             lstTable, strStatus = Processor.write_data_to_file(strFileName, lstTable)
 
-            IO.input_press_to_continue("Data saved to file!")
+            IO.input_press_to_continue(strStatus)
 
         else:  # Let the user know the data was not saved
 
@@ -255,6 +257,7 @@ while(True):
             lstTable.clear()  # Added to fix bug 1.1.2030
               # Replace the current list data with file data
             lstTable, strStatus = Processor.read_data_from_file(strFileName, lstTable)
+            IO.input_press_to_continue(strStatus)
         else:
             IO.input_press_to_continue("File data was NOT reloaded!")
 
