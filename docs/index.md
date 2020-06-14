@@ -1,9 +1,9 @@
-#Introduction to Programming in Python
-##Module 06
-###Using Classes and Functions for Separation of Concerns
+#Introduction to Programming in Python  
+##Module 06  
+###Using Classes and Functions for Separation of Concerns  
 
 **Dev:** *N. Tolliver*  
-**Date:** *5.25.2020*
+**Date:** *5.25.2020*  
 
 ##Introduction
 The purpose of this assignment was to create code that allows a user to manage a task list.  The previous assignment also performed the same function with the same input and output.  Although the code in this assignment performs the same function as the previous assignment, such that a user of the code would only notice slight differences in the input and output and the process; the code bears little resemblance to the previous code.  It uses classes and functions to organize the code into Data, Input/Output tasks and processing tasks.  To accomplish this, I removed sections of code from the main body of the program (controller) to a function using the proper syntax for defining a function, documenting its purpose, its parameters, and its return values, and finally making the proper call to the function in the body of the main program. 
