@@ -254,13 +254,13 @@ Figure 18 shows screenshots of the final code running in PyCharm
 
 ![Figure 18a](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18a.png "Figure 18 - Program run in PyCharm")  
 ![Figure 18b](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18b.png "Figure 18 - Program run in PyCharm")  
-![Figure 18c](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18c.png "Figure 18 - Program run in PyCharm")  
+![Figure 18c](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18 c.png "Figure 18 - Program run in PyCharm")  
 ![Figure 18d](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18d.png "Figure 18 - Program run in PyCharm")  
 
 ## Running the Code in the Command Window  
 The code ran in PyCharm but did not run in the command window.  To resolve this problem, it was necessary to change directories so that I was in the path for Assignment06 and then it ran properly as shown in Figure 19.  Notice the error message on the first attempt to run the program, then the change directory command, and finally, the program running as expected.
 
-![Figure 19a](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure19a.png "Figure 19 - Program run in CMD window")  
+![Figure 19a](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure19 a.png "Figure 19 - Program run in CMD window")  
 ![Figure 19b](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure19b.png "Figure 19 - Program run in CMD window")  
 
 ## Summary  
@@ -277,7 +277,7 @@ After losing sleep over what to do with the “success” string, I decided to j
 
 Also, Figure 20 shows a screenshot of the ToDo list as amended by all of my iterations through the code.
 
-![Figure20](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure20.png "Figure 20 - ToDo List") 
+![Figure 20](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure20.png "Figure 20 - ToDo List") 
 
 ## Useful Websites  
 
