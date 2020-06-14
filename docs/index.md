@@ -279,7 +279,7 @@ After losing sleep over what to do with the “success” string, I decided to j
 
 Figure 20 shows a screenshot of the ToDo list as amended by all of my iterations through the code.
 
-![Figure 20](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure20.png "Figure 20 - ToDo List") 
+![Figure 20](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure20.png "Figure 20 - ToDo List")   
 *Figure 20 - ToDo List*
 
 ## Useful Websites  
