@@ -41,7 +41,7 @@ Separation of Concerns is a method of separating different aspects of code into 
 By setting a “break point” in PyCharm, you can use the debugging tool to step through the code and pause at these points.  This helps you to isolate problem areas of code, narrow down the problem, and find and fix the bugs.
 
 ## What is a GitHub webpage?  
-A GitHub webpage is a personalized webpage that the developer can create within the GitHub website.  The website uses markdown programming language.  My GitHub website address is https://tollivne.github.io/ITFnd100-Mod06/ (5/23/2020, External).
+A GitHub webpage is a personalized webpage that the developer can create within the GitHub website.  The website uses markdown programming language.  My GitHub website address is https://tollivne.github.io/IntroToProg-Python-Mod06/ (5/23/2020, External).
 
 ## Setting up the Code  
 For this exercise, we were given a set of fully functioning code that performed basically, the same task as the previous exercise.  The intent of the code was to manage a task list.  The code reads the existing task list from a file into memory, processes the data by adding tasks, or removing tasks, displays the current data, and writes it back to the file.  The purpose of modifying the code is to make it more readable and more in conformance to the industry standards for separation of concerns through the use of classes and functions.  To begin, I copied the starter code into a new python file called Assignment06, created a new task list in the same folder, edited the header of the code, and searched for the areas showing items that needed to be changed.
