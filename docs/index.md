@@ -77,7 +77,7 @@ def GetTaskandPriority ():
 
 The code returned two values as a Tuple which was unpacked as shown in Figure 2.
 ```
-The code returned two values as a Tuple which was unpacked as shown in Figure 2.
+strTask, strPriority = IO.GetTaskandPriority() # unpack tuple
 ```
 *Figure 2 - Unpack Tuple Values Returned from Function*
 
@@ -239,7 +239,7 @@ Although it may have been acceptable to leave the variable names the way they we
 2.	Renumbered menu items and renumbered the choices in the code.
 3.	Added the return parameter “success” to each of the processing function return statements
 
-After convert my existing code by renaming variables, removing menu options, renumbering the menu, and renumbering the choices in the code,  I then added the word “Success” to the return values for all the processing functions.  This gave me an error message telling me that the list row indices needed to be “integers” and not “text” values.  Since I had not made any changes to the list or the indices, I was stumped for a substantial period of time by this error message.  I hit “undo” and tested the code repeatedly until I got to the point where I no longer received the error message.  I was able to isolate the problem to having added “Success” to the list of return values without unpacking the tuple to indicate that the function was returning more than one parameter.  To resolve the problem I changed the code to unpack the tuple to get the value of the strStatus.  For example, the code in Figure 16 was changed to the code in Figure 17 to resolve the error message.
+After converting my existing code by renaming variables, removing menu options, renumbering the menu, and renumbering the choices in the code,  I then added the word “Success” to the return values for all the processing functions.  This gave me an error message telling me that the list row indices needed to be “integers” and not “text” values.  Since I had not made any changes to the list or the indices, I was stumped for a substantial period of time by this error message.  I hit “undo” and tested the code repeatedly until I got to the point where I no longer received the error message.  I was able to isolate the problem to having added “Success” to the list of return values without unpacking the tuple to indicate that the function was returning more than one parameter.  To resolve the problem I changed the code to unpack the tuple to get the value of the strStatus.  For example, the code in Figure 16 was changed to the code in Figure 17 to resolve the error message.
 ```
 lstTable = Processor.add_data_to_list(strTask, strPriority, lstTable)
 ```
@@ -256,12 +256,14 @@ Figure 18 shows screenshots of the final code running in PyCharm
 ![Figure 18b](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18b.png "Figure 18 - Program run in PyCharm")  
 ![Figure 18c](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18 c.png "Figure 18 - Program run in PyCharm")  
 ![Figure 18d](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure18d.png "Figure 18 - Program run in PyCharm")  
+*Figure 18 - Program run in PyCharm*
 
 ## Running the Code in the Command Window  
 The code ran in PyCharm but did not run in the command window.  To resolve this problem, it was necessary to change directories so that I was in the path for Assignment06 and then it ran properly as shown in Figure 19.  Notice the error message on the first attempt to run the program, then the change directory command, and finally, the program running as expected.
 
 ![Figure 19a](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure19 a.png "Figure 19 - Program run in CMD window")  
 ![Figure 19b](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure19b.png "Figure 19 - Program run in CMD window")  
+*Figure 19 - Program run in CMD window*
 
 ## Summary  
 This was the most complex assignment yet as the code is getting longer and I am building upon my programming knowledge.  I used starter code which initially made it easier to “fill in the blanks.”  I could easily locate the “ToDo” items, move the code into a function and replace it with the appropriate function call statements.  This went smoothly for all of the functions except the “remove” function where, although I set a Boolean value to “false” in the function, I had not passed the value back to the main body of the program.  This was the hardest part of troubleshooting this code, until I found out that I was editing the wrong code.  
@@ -273,11 +275,12 @@ What seemed like the simplest of changes (adding the word “Success” to the p
 After I added the correct code to unpack the tuple, I continued with working on the functions in the code and I fixed the problem with the “Remove” function and tested it in the final version.  Overall, it was a good learning experience for identifying redundant activities in code that could be moved to a function, it helped with getting the proper industry preferred architecture for coding, and helped me learn the art of calling functions with the necessary arguments.  It gave me practice with debugging, finding, renaming, and re-structuring code as well as reinforcing the fact that if you return multiple items from a tuple then you have to unpack the tuple to extract the values.
 
 ## Final Note  
-After losing sleep over what to do with the “success” string, I decided to just submit my assignment and stop worrying about it.  After submitting it, I then proceeded with the rest of my assignment which was to review other student’s papers and their code.  I found a brilliant solution for what to do with the elusive “success” string.  The string is replaced by the definition of success for that function!  So, If the goal of the function is to read data from a file, the string “success” should be replaced by “Data was read from file” and then passed into the body of the function with the table and unpacked as a tuple and printed using the IO call.  Likewise, “success” for adding data to a file should read “Data added to the file.”  Success for writing data to the file should read “Data written to file.”  For removing the data it was a bit more complex and I decided it should say “Data removed from file is:  “ and then append the string of the Boolean value of whether it was true or false.  Credit goes to Mr. Erik Knighton for this solution and I am not sure if I am allowed to use my updated code for grading purposes…or is that the purpose of GitHub and collaboration?  We shall see!  All screenshots in this paper are from the program before it was amended per Mr. Knighton’s solution.
+After losing sleep over what to do with the “success” string, I decided to just submit my assignment and stop worrying about it.  After submitting it, I then proceeded with the rest of my assignment which was to review other student’s papers and their code.  I found a brilliant solution for what to do with the elusive “success” string.  The string is replaced by the definition of success for that function!  So, If the goal of the function is to read data from a file, the string “success” should be replaced by “Data was read from file” and then passed into the body of the function with the table and unpacked as a tuple and printed using the IO call.  Likewise, “success” for adding data to a file should read “Data added to the file.”  Success for writing data to the file should read “Data written to file.”  For removing the data it was a bit more complex and I decided it should say “Data removed from file is:  “ and then append the string of the Boolean value of whether it was true or false.  Credit goes to Mr. Erik Knighton for this solution and illustrates the power of collaborating and "Open Source" software on GitHub.  All screenshots in this paper are from the program before it was amended per Mr. Knighton’s solution.
 
-Also, Figure 20 shows a screenshot of the ToDo list as amended by all of my iterations through the code.
+Figure 20 shows a screenshot of the ToDo list as amended by all of my iterations through the code.
 
 ![Figure 20](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure20.png "Figure 20 - ToDo List") 
+*Figure 20 - ToDo List*
 
 ## Useful Websites  
 
