@@ -74,13 +74,13 @@ def GetTaskandPriority ():
     print()  # Add an extra line for looks
     return(task, priority)
 '''
-Figure 1 - Defining the IO Function to Collect User Input
+*Figure 1 - Defining the IO Function to Collect User Input*
 
 The code returned two values as a Tuple which was unpacked as shown in Figure 2.
 '''
 The code returned two values as a Tuple which was unpacked as shown in Figure 2.
 '''
-Figure 2 - Unpack Tuple Values Returned from Function
+*Figure 2 - Unpack Tuple Values Returned from Function*
 
 The last step of defining the function was to add the comments known as the function document headers or “Doc String” shown in Figure 3:
 '''
@@ -89,7 +89,7 @@ The last step of defining the function was to add the comments known as the func
 :return: Task name & Task priority (High/Low)
 """
 '''
-Figure 3 – Doc String
+*Figure 3 – Doc String*
 
 ##Function for Writing Dictionary Rows into the File
 The next function to create was for opening the text file, looping through all the rows in the table, writing each dictionary row to the file, and closing the file.  The parameters passed to the function are the file name and the values in the list table.  The variable names are file_name, and list_of_rows.  There are no variables returned from this process because it is writing the data to a file.  The function name was given in the program and is WriteListDataToFile.  The code is shown in Figure 4.
@@ -106,13 +106,13 @@ def WriteListDataToFile(file_name, list_of_rows):
         objFile.write(dicRow["Task"] + "," + dicRow["Priority"] + "\n")
     objFile.close()
 '''
-Figure 4 - Function to Write Data to File
+*Figure 4 - Function to Write Data to File*
 
 The call to the function is shown in Figure 5.  The key to success in getting this code to work properly on the first pass was a good understanding of the parameters, the arguments, and which values need to be returned to the main program.
 '''
 FileProcessor.WriteListDataToFile(strFileName, lstTable)
 '''
-Figure 5 - Call to Function to Write Data to File
+*Figure 5 - Call to Function to Write Data to File*
 
 The last step was to add the comments (Doc String) to the function as shown in Figure 6.
 '''
@@ -121,7 +121,7 @@ The last step was to add the comments (Doc String) to the function as shown in F
 :return: None
 """
 '''
-Figure 6 - Comments (Doc String) for Function to Write Data to File
+*Figure 6 - Comments (Doc String) for Function to Write Data to File*
 
 The next function was to add a task to the ToDo list.  In this function, the arguments are strTask and strPriority.  They are added to a dictionary row which is then appended to the lstTable.  The updated lstTable is the final data which needs to be returned to the main program.  I chose to call my function AddItemtoList and the code is shown in Figure 7.
 '''
@@ -134,13 +134,13 @@ def AdditemtoList (Task, Priority):
     Table.append(dicRow)  # Add the new row to the list/table
     return (Table)
 '''
-Figure 7 - Code for Adding an Item to the List
+*Figure 7 - Code for Adding an Item to the List*
 
 The call to the function is shown in Figure 8 .
 '''
 lstTable = FileProcessor.AdditemtoList(strTask, strPriority)
 '''
-Figure 8 - Calling the Function to Add an Item to the List
+*Figure 8 - Calling the Function to Add an Item to the List*
 
 ##Input and Press the Enter Key to Continue
 There are several areas in the program where an optional message is printed out and the user is prompted to press the enter key to continue.  Although the optional message varies, the user is always prompted to press the enter key to continue.  A function can be used to automate the redundant part of this task.
@@ -158,7 +158,7 @@ def input_press_to_continue(optional_message):
     print(optional_message)
     input("Press the [Enter] key to continue.")
 '''
-Figure 9 - Displaying an Optional Message and pressing Enter to Continue
+*Figure 9 - Displaying an Optional Message and pressing Enter to Continue*
 
 There are three calls to this function as shown in Figure 10.
 '''
@@ -166,7 +166,7 @@ IO.input_press_to_continue("Data saved to file!")
 IO.input_press_to_continue("New data was NOT Saved, but previous data still exists!")
 IO.input_press_to_continue("File data was NOT reloaded!")
 '''
-Figure 10 - Displaying a Message and Pressing Enter to Continue
+*Figure 10 - Displaying a Message and Pressing Enter to Continue*
 
 ##Getting a Yes/No Answer from the User
 For this function, the parameter would be the question that the code wants to ask the user.  The return value would simply be a “y” or a “n.”  The code for this function is shown in Figure 11 .
@@ -178,7 +178,7 @@ def input_yes_no_choice(message):
     """
     return str(input(message)).strip().lower()
 '''
-Figure 11 - Function to Get a Yes or No Answer from the User
+*Figure 11 - Function to Get a Yes or No Answer from the User*
 
 ##Getting the Task to be Removed
 To get the task to be removed, the parameter in the function would be none and the returned value would be the string containing the task to be removed.  The code is shown in Figure 12.
@@ -188,13 +188,13 @@ def input_task_to_remove():
     remove = input("Which TASK would you like removed? - ")  # get task user wants deleted
     return (remove)
 '''
-Figure 12 - Function to Get Task User Wants to Remove
+*Figure 12 - Function to Get Task User Wants to Remove*
 
 The call to the function is shown in Figure 13.
 '''
 strKeyToRemove = IO.input_task_to_remove() # get task user wants deleted
 '''
-Figure 13 - Calling the Function to Get the Task to be Removed
+*Figure 13 - Calling the Function to Get the Task to be Removed*
 
 ##Removing the Task
 To remove the task, the parameter the function needs are the string of the item to be removed, and the list of tasks.  What should be returned is the new revised task list.  The code is shown in Figure 14.
@@ -212,13 +212,14 @@ def remove_data_from_list(task, list_of_rows, item_removed):
 
     return list_of_rows, item_removed  # Make sure to unpack tuple when values are returned!
 '''
-Figure 14 - Function to Remove a Task
+*Figure 14 - Function to Remove a Task*
 
 The code for calling the function is shown in Figure 15.
 '''
 lstTable, blnItemRemoved = Processor.remove_data_from_list(strKeyToRemove, lstTable, blnItemRemoved)  # unpack tuple
 '''
-##Figure 15 - Call to function for unpacking tuple
+*Figure 15 - Call to function for unpacking tuple*
+
 This was the most difficult function to write.  Initially, I was not returning the Boolean item removed.  Although the code executed properly and removed the item, the printed message would tell the user that the item was not found.  The function sets the Boolean value to true and the controller test kept coming up false.  The problem was caused by the fact that the Boolean value of true was not being passed on to the controller.  Although the value was set to true in the function, since it was NOT being passed on, the controller still had it set as false and would print the corresponding message for a false test.  The problem was resolved by adding the Boolean value as a return parameter for the function and then, since there were multiples value being returned, unpacking the tuple in the statement that calls the function.
 
 ##Final Touches
@@ -243,12 +244,12 @@ After convert my existing code by renaming variables, removing menu options, ren
 '''
 lstTable = Processor.add_data_to_list(strTask, strPriority, lstTable)
 '''
-Figure 16 - Code before adding "Success" as a Status
+*Figure 16 - Code before adding "Success" as a Status*
 
 '''
 lstTable, strStatus = Processor.add_data_to_list(strTask, strPriority, lstTable)
 '''
-Figure 17 - Code to unpack tuple to capture status
+*Figure 17 - Code to unpack tuple to capture status*
 
 Figure 18 shows screenshots of the final code running in PyCharm
 
@@ -278,6 +279,8 @@ After losing sleep over what to do with the “success” string, I decided to j
 Also, Figure 20 shows a screenshot of the ToDo list as amended by all of my iterations through the code.
 
 ![Figure20](https://tollivne.github.io/IntroToProg-Python-Mod06/Figure20.png "Figure 20 - ToDo List") 
+
+##Useful Websites
 
 [Google Homepage] (https://www.google.com "Google's Homepage")
 
