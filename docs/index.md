@@ -59,7 +59,7 @@ In addition, there were other areas where there was duplication of a task.  One 
 7.	I/O code - Creating and calling a function to display an optional message and prompting the user to press enter to return to the main menu.
 8.	I/O code - Creating and calling a function to get a yes/no answer from the user.
 
-##Prompting the User for the Task and the Priority
+## Prompting the User for the Task and the Priority  
 For this function to prompt the user for the task and priority, there are no input parameters.  The purpose of the function is to return the values for strTask and strPriority.  I chose to call the function GetTaskandPriority in the IO Class.  I commented out the code in the main body of the function and wrote the code shown in Figure 1.
 
 The first error I encountered came from writing “Staticmethod” with a capital “S.”  This was a little tricky/confusing because although it is perfectly acceptable to start the name of the functions with a capital letter, “staticmethod” must be started with a lowercase “s.”
